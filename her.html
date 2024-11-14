@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Hibaa!</title>
+    <style>
+        
+        
+        .scrollable {
+            width: 300px;
+            height: 200px;
+            overflow-y: scroll; /* Enables vertical scrollbar */
+            border: 1px solid #ccc;
+            padding: 10px;
+            background: #fff;
+        }
+    
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: #f0e68c;
+            color: #5d5d5d;
+            padding: 20px;
+            
+            overflow: hidden;
+            position: relative;
+        }
+        h1 {
+            font-size: 60px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: bounce 1s infinite alternate, sway 2s infinite alternate;
+        }
+        h2 {
+            font-size: 36px;
+            margin-top: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        .cake {
+            width: 250px;
+            margin: 20px auto;
+            animation: scaleUp 1s ease-in-out infinite alternate;
+        }
+        .message {
+            font-size: 28px;
+            margin-top: 30px;
+            text-align: center;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+        @keyframes sway {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(-10px); }
+            100% { transform: translateX(10px); }
+        }
+        @keyframes scaleUp {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+        .confetti {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            to { transform: translateY(100vh); }
+        }
+    </style>
+</head>
+<body style="overflow-y: scroll;" style=""> 
+    <h1 align="center">Happy Birthday Hibaa!</h1>
+    <img  src="84e686b2-1647-4c6a-8bb1-a745c34b4c58.jpeg" alt="hehehe"  width="100" class="cake">
+    <img src="50 Touching Birthday Letters For Best Friend to Celebrate - Happily Lover.jpeg"width="30" alt="Birthday Cake" class="cake">
+    <h2 align="center">Wishing you a life filled with love and cheer!</h2>
+    
+    <p class="message">May all your dreams come true!</p>
+  
+    <div class="confetti" id="confetti"></div>
+
+    <script>
+        const confettiContainer = document.getElementById('confetti');
+
+        function createConfetti() {
+            const confettiPiece = document.createElement('div');
+            confettiPiece.classList.add('confetti-piece');
+            confettiPiece.style.backgroundColor = getRandomColor();
+            confettiPiece.style.left = Math.random() * 100 + 'vw';
+            confettiPiece.style.animationDuration = Math.random() * 3 + 2 + 's';
+            confettiPiece.style.transform = `rotate(${Math.random() * 360}deg)`;
+            confettiContainer.appendChild(confettiPiece);
+
+            // Remove the confetti piece after it falls
+            setTimeout(() => {
+                confettiPiece.remove();
+            }, 5000);
+        }
+
+        function getRandomColor() {
+            const colors = ['#ff5733', '#33ff57', '#3357ff', '#f1c40f', '#8e44ad', '#e74c3c', '#3498db'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // Create confetti every 100ms
+        setInterval(createConfetti, 100);
+    </script>
+</body>
+</html>
